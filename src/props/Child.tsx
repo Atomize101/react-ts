@@ -1,12 +1,28 @@
 interface ChildProps {
 	color: string;
-}
-
-export const Child = ({ color }: ChildProps) => {
-	return <div>{color}</div>;
-};
-
-// The style below shows that the function is a react component
-export const ChildAsFC: React.FC<ChildProps> = ({ color }) => {
-	return <div>{color}</div>;
-};
+	onClick: () => void;
+  }
+  
+  export const Child = ({ color, onClick }: ChildProps) => {
+	return (
+	  <div>
+		{color}
+		<button onClick={onClick}>Click me</button>
+	  </div>
+	);
+  };
+  
+  export const ChildAsFC: React.FC<ChildProps> = ({
+	color,
+	onClick,
+	children,
+  }) => {
+	return (
+	  <div>
+		{color}
+		{children}
+		<button onClick={onClick}>Click me</button>
+	  </div>
+	);
+  };
+  
