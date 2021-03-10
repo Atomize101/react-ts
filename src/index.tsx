@@ -13,3 +13,6 @@ ReactDOM.render(
     <App />,
     document.querySelector('#root')
 )
+
+
+// Use div's with UserSearch
